@@ -4,11 +4,12 @@
 :root {
   --color-text: #767e9e;
   --color-text-dark: #666d89;
+  --color-text-light: #dedede;
   --color-background: #ffffff;
-  --color-background-dark: #2d2f39;
+  --color-background-dark: #2d303a;
   --color-background-bright: #ef6c64;
   --color-background-light: #f2f2f2;
-  --color-border-dark: #323645;
+  --color-border-dark: #323746;
   --color-border-bright: #ea666b;
   --color-primary: #f06c64;
 
