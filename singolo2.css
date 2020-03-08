@@ -180,6 +180,11 @@
 .social__link:hover {
   background-color: var(--color-text-dark);
 }
+
+.social__link:last-child {
+  margin-right: 0;
+}
+
 .icon {
   max-width: 14px;
   max-height: 14px;
