@@ -5,12 +5,14 @@
   --color-text: #767e9e;
   --color-text-dark: #666d89;
   --color-text-light: #dedede;
+  --color-text-form: #f0d8d9;
+  --color-text-placeholder: #f48c8f;
   --color-background: #ffffff;
   --color-background-dark: #2d303a;
-  --color-background-bright: #ef6c64;
+  --color-background-form: #d6564f;
   --color-background-light: #f2f2f2;
   --color-border-dark: #323746;
-  --color-border-bright: #ea666b;
+  --color-border-bright: #ea676b;
   --color-primary: #f06c64;
 
   --content-width: 1020px;
@@ -252,7 +254,7 @@ body {
 }
 
 .slider {
-  background-color: var(--color-background-bright);
+  background-color: var(--color-primary);
   border-bottom: 7px solid var(--color-border-bright);
 }
 
