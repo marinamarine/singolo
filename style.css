@@ -201,8 +201,12 @@ body {
 }
 
 .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   background-color: var(--color-background-dark);
   border-bottom: 6px solid var(--color-border-dark);
+  z-index: 2;
 }
 
 .header__inner {
