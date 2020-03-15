@@ -413,8 +413,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   padding: 1px 0 0 1px;
   margin-bottom: 19px;
 }
@@ -448,10 +448,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .portfolio__item {
@@ -459,11 +459,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 220px;
   height: 187px;
   overflow: hidden;
@@ -490,7 +490,7 @@ body {
   padding-top: 68px;
   padding-bottom: 53px;
 }
- 
+
 .about_description {
   margin-bottom: 35px;
 }
@@ -500,10 +500,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .person {
@@ -524,10 +524,10 @@ body {
   overflow: hidden;
   white-space: nowrap;
   -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
-.person__text{
+.person__text {
   padding: 10px 0;
   font-size: 12px;
   line-height: 21px;
@@ -545,11 +545,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   margin-right: 8px;
@@ -753,4 +753,85 @@ body {
 
 .footer__social {
   padding: 0;
+}
+
+.message {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.message-popup {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  max-width: 330px;
+  min-height: 30vh;
+  max-height: 90vh;
+  padding: 25px;
+  border-radius: 5px;
+  overflow-y: auto;
+  background: var(--color-background-form);
+  color: var(--color-text-form);
+}
+
+.message__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  border: transparent;
+  color: var(--color-background);
+  background: transparent;
+  outline: 0;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+.message__close:hover,
+.message__close:focus {
+  font-weight: 900;
+}
+
+.message__heading {
+  color: inherit;
+}
+
+.message__button {
+  margin-top: auto;
+  background-color: var(--color-text-form);
+  color: var(--color-background-form);
+  outline-color: var(--color-text-form);
+  border: transparent;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.76;
+  cursor: pointer;
+}
+
+.message__button:hover,
+.message__button:focus {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
 }
