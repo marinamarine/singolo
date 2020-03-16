@@ -51,15 +51,15 @@ form.addEventListener('submit', event => {
   event.preventDefault();
 
   if (!subject.value) {
-    messageSubject.innerHTML = 'Without subject';
+    messageSubject.textContent = 'Without subject';
   } else {
-    messageSubject.innerHTML = 'Subject: ' + String(subject.value);
+    messageSubject.textContent = 'Subject: ' + String(subject.value);
   }
 
   if (!text.value) {
-    messageDescription.innerHTML = 'Without description';
+    messageDescription.textContent = 'Without description';
   } else {
-    messageDescription.innerHTML = 'Description: ' + String(text.value);
+    messageDescription.textContent = 'Description: ' + String(text.value);
   }
 
   form.reset();
