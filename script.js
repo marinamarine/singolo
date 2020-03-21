@@ -24,6 +24,7 @@ const tabsItems = document.querySelectorAll('.tabs__link');
 
 const portfolio = document.querySelector('.portfolio__items');
 const portfolioItems = document.querySelectorAll('.portfolio__item');
+let portfolioItemsArray;
 
 //functions
 function activateMenuItem(currentItem) {
@@ -66,7 +67,6 @@ window.addEventListener('scroll', function (event) {
       let id = item.getAttribute('id');
       if (lastId !== id) {
         lastId = id;
-        console.log('lastId', lastId);
         
         menuItems.forEach(item => {
           item.getAttribute("href") === '#' + id ? currentMenuItem=item : ''});
@@ -100,26 +100,34 @@ form.addEventListener('submit', event => {
 closeBtn.forEach(item => item.addEventListener('click', closeMessage));
 
 //portfolio tabs
-tabs.addEventListener('click', event => {
-  event.preventDefault();
-  const targetTab = event.target;
-  const targetTabIndex = targetTab.dataset.tab;
 
-  if (targetTab.classList.contains('tabs__link_active')) {
-    console.log(targetTab);
+function filterPortfolio(currentTab) {
+  const currentIndex = currentTab.dataset.tab;
+
+  if (currentTab.classList.contains('tabs__link_active')) {
     return;
   }
 
   tabsItems.forEach(item => item.classList.remove('tabs__link_active'));
-  targetTab.classList.add('tabs__link_active');
-
-  portfolioItems.forEach(item => {
-    console.log(item.dataset.tabitem);
-    item.classList.remove('portfolio__item_sorted');
-    if (item.dataset.tabitem == targetTabIndex) {
-      item.classList.add('portfolio__item_sorted');
+  currentTab.classList.add('tabs__link_active');
+  
+  portfolioItemsArray = Array.from(portfolioItems);
+  
+  portfolioItemsArray.map((item, index, array)=>{
+    if (item.dataset.tabitem == currentIndex){
+      array.splice(index,1);
+      array.unshift(item);
     }
   });
+
+  portfolio.innerHTML = '';
+  portfolioItemsArray.forEach((item) => portfolio.append(item));
+}
+
+tabs.addEventListener('click', event => {
+  event.preventDefault();
+  filterPortfolio(event.target);
+  
 });
 
 //portfolio items active
