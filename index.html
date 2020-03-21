@@ -63,7 +63,9 @@
             <li class="menu__item">
               <a href="#portfolio" class="menu__link">PORTFOLIO</a>
             </li>
-            <li class="menu__item"><a href="#about" class="menu__link">ABOUT</a></li>
+            <li class="menu__item">
+              <a href="#about" class="menu__link">ABOUT</a>
+            </li>
             <li class="menu__item">
               <a href="#contact" class="menu__link">CONTACT</a>
             </li>
@@ -74,17 +76,20 @@
     <main class="main">
       <section id="home" class="slider">
         <div class="container slider__inner">
-          <div class="slide">
-            <img
-              class="slide__image slide__image_1"
-              src="./assets/img/iphone1.png"
-              alt=""
-            />
-            <img
-              class="slide__image slide__image_2"
-              src="./assets/img/iphone2.png"
-              alt=""
-            />
+          <div class="slider__wrapper">
+            <div class="slide active" >
+              <div class="slide__image slide__image_1 iphone iphone_active">
+                <div class="iphone__screen"></div>
+                <img src="./assets/img/iphone1.png" alt="" />
+              </div>
+              <div class="slide__image slide__image_2 iphone iphone_active">
+                <div class="iphone__screen"></div>
+                <img src="./assets/img/iphone2.png" alt="" />
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/img/iphone3.png" alt="">
+            </div>
           </div>
           <div class="slider__nav">
             <button class="slider__arrow arrow-prev"></button>
@@ -92,7 +97,7 @@
           </div>
         </div>
       </section>
-      <section  id="services" class="services">
+      <section id="services" class="services">
         <div class="container services__inner">
           <div class="heading">Our Services</div>
           <p class="description services__description">
@@ -199,7 +204,9 @@
           </div>
           <ul class="tabs">
             <li class="tabs__item">
-              <a class="tabs__link tabs__link_active" data-tab="0" href="#">All</a>
+              <a class="tabs__link tabs__link_active" data-tab="0" href="#"
+                >All</a
+              >
             </li>
             <li class="tabs__item">
               <a class="tabs__link" data-tab="1" href="#">Web Design</a>
