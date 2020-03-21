@@ -1,5 +1,14 @@
 // window.onload = function () {
 const menu = document.querySelector('.menu__inner');
+const menuItems = menu.querySelectorAll('.menu__link');
+const menuItemsArray = Array.from(menuItems);
+const headerHeight = document.querySelector('.header').clientHeight;
+
+const scrollItemsArray = menuItemsArray.map((item) =>
+  document.querySelector(item.getAttribute("href"))
+);
+let lastId;
+let currentMenuItem;
 
 const form = document.querySelector('.form');
 const subject = document.querySelector('#subject');
@@ -17,6 +26,11 @@ const portfolio = document.querySelector('.portfolio__items');
 const portfolioItems = document.querySelectorAll('.portfolio__item');
 
 //functions
+function activateMenuItem(currentItem) {
+  menuItems.forEach(item => item.classList.remove('menu__link_active'));
+  currentItem.classList.add('menu__link_active');
+}
+
 function openMessage() {
   message.classList.remove('hidden');
   setTimeout(() => (message.style.opacity = 1), 400);
@@ -27,23 +41,39 @@ function closeMessage() {
   setTimeout(() => message.classList.add('hidden'), 400);
 }
 
-//menu
+
+//menu to scroll
 menu.addEventListener('click', event => {
-  event.preventDefault();
   const targetItem = event.target;
   if (targetItem.classList.contains('menu__link')) {
-    menu
-      .querySelectorAll('.menu__link')
-      .forEach(el => el.classList.remove('menu__link_active'));
-    targetItem.classList.add('menu__link_active');
+    event.preventDefault();
 
-    const yOffset = document.querySelector('.header').clientHeight;
-    const element = document.querySelector(targetItem.getAttribute('href'));
-    const y =
-      element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+    activateMenuItem(targetItem);
 
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    let href = targetItem.getAttribute('href');
+    const offsetTop = href === '#' ? 0 :
+      document.querySelector(href).getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   }
+});
+
+// scroll to menu
+window.addEventListener('scroll', function (event) {
+  let fromTop = window.pageYOffset + headerHeight;
+  scrollItemsArray.forEach((item) => {
+    if (item.offsetTop <= fromTop && item.offsetTop + item.offsetHeight > fromTop) {
+      let id = item.getAttribute('id');
+      if (lastId !== id) {
+        lastId = id;
+        console.log('lastId', lastId);
+        
+        menuItems.forEach(item => {
+          item.getAttribute("href") === '#' + id ? currentMenuItem=item : ''});
+          activateMenuItem(currentMenuItem);
+      }
+    }
+  });
 });
 
 //form popup
@@ -92,7 +122,7 @@ tabs.addEventListener('click', event => {
   });
 });
 
-//porfolio items active
+//portfolio items active
 portfolio.addEventListener('click', event => {
   event.preventDefault();
 
