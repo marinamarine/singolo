@@ -53,6 +53,8 @@
       <div class="container header__inner">
         <h1 class="logo">Singolo<span class="logo__inner">*</span></h1>
         <nav class="menu">
+          <button class="menu__button"><span></span><span></span><span></span></button>
+          <div class="logo">Singolo<span class="logo__inner">*</span></div>
           <ul class="menu__inner">
             <li class="menu__item">
               <a href="#home" class="menu__link menu__link_active">HOME</a>
@@ -77,7 +79,7 @@
       <section id="home" class="slider">
         <div class="container slider__inner">
           <div class="slider__wrapper">
-            <div class="slide active" >
+            <div class="slide slide1 active" >
               <div class="slide__image slide__image_1 iphone iphone_active">
                 <div class="iphone__screen"></div>
                 <img src="./assets/img/iphone1.png" alt="" />
@@ -87,7 +89,7 @@
                 <img src="./assets/img/iphone2.png" alt="" />
               </div>
             </div>
-            <div class="slide">
+            <div class="slide slide2">
               <img src="./assets/img/iphone3.png" alt="">
             </div>
           </div>
@@ -115,10 +117,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">Custom Design</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Curabitur vestibulum eget mauris quis laoreet. Phasellus in
                   quam laoreet, viverra lacus ut, ultrices velit.
-                </div>
+                </p>
               </div>
             </div>
 
@@ -130,10 +132,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">Inovative Ideas</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Quisque luctus, quam eget molestie com&shy;modo, lacus purus
                   cursus purus, nec rutrum tellus dolor id lorem.
-                </div>
+                </p>
               </div>
             </div>
             <div class="advantage">
@@ -144,10 +146,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">Love Is The Answer</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
                   turpis, et consequat felis. Quisque condimentum.
-                </div>
+                </p>
               </div>
             </div>
             <div class="advantage">
@@ -158,10 +160,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">Responsive Layout</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas
                   blandit nunc ligula. Prae&shy;sent elit leo.
-                </div>
+                </p>
               </div>
             </div>
             <div class="advantage">
@@ -172,10 +174,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">24 / 7 Support</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
                   Nulla a sem erat. Pellen&shy;tesque egestas venenatis lorem .
-                </div>
+                </p>
               </div>
             </div>
             <div class="advantage">
@@ -186,10 +188,10 @@
               />
               <div class="advantage__text">
                 <div class="advantage__title">Feel Like A Star</div>
-                <div class="advantage__description">
+                <p class="advantage__description">
                   Quisque hendrerit purus dapibus, ornare nibh vitae, viverra
                   nibh. Fusce vitae aliquam tellus.
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -198,10 +200,10 @@
       <section id="portfolio" class="portfolio">
         <div class="container portfolio__inner">
           <div class="heading">Portfolio</div>
-          <div class="description portfolio__description">
+          <p class="description portfolio__description">
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
             eget lacinia odio sem nec elit.
-          </div>
+          </p>
           <ul class="tabs">
             <li class="tabs__item">
               <a class="tabs__link tabs__link_active" data-tab="0" href="#"
@@ -315,12 +317,12 @@
       <section id="about" class="about">
         <div class="container about__inner">
           <div class="heading">About Us</div>
-          <div class="description about_description">
+          <p class="description about_description">
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
             Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
             lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
             tortor mauris condimentum nibh.
-          </div>
+          </p>
           <div class="persons">
             <div class="person">
               <div class="person__photo">
@@ -472,12 +474,12 @@
       <section id="contact" class="contact">
         <div class="container contact__inner">
           <div class="heading contact__heading">Get a Quote</div>
-          <div class="description contact__description">
+          <p class="description contact__description">
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
             Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
             lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
             tortor mauris condimentum nibh.
-          </div>
+          </p>
           <div class="contact__layout">
             <form class="form" action="#">
               <input
@@ -508,11 +510,11 @@
                 name="text"
                 id="text"
                 cols="30"
-                rows="8"
+                rows="6"
                 placeholder="Describe your project in detail..."
               ></textarea>
               <button class="form__item form__submit" type="submit">
-                Submit
+                Send
               </button>
             </form>
             <div class="contact-info">

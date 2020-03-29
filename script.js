@@ -42,6 +42,11 @@ const portfolioItems = document.querySelectorAll('.portfolio__item');
 let portfolioItemsArray;
 
 
+/*  BURGER MENU */
+
+const burgerButton = document.querySelector('.menu__button');
+const burgerButtonWrap = document.querySelector('.menu');
+
 /*  SLIDER  */
 
 //slider phones screens
@@ -177,6 +182,9 @@ menu.addEventListener('click', event => {
       document.querySelector(href).getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
     window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    if(window.innerWidth < 768) {
+      burgerButtonWrap.classList.remove('menu_active');
+    }
   }
 });
 
@@ -279,6 +287,12 @@ portfolio.addEventListener('click', event => {
     activeItem ? activeItem.classList.remove('portfolio__item_active') : '';
     targetItem.classList.add('portfolio__item_active');
   }
+});
+
+
+//burger menu
+burgerButton.addEventListener('click', function(event) {
+  burgerButtonWrap.classList.toggle('menu_active');
 });
 
 // }
