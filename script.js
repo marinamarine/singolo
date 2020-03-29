@@ -295,4 +295,13 @@ burgerButton.addEventListener('click', function(event) {
   burgerButtonWrap.classList.toggle('menu_active');
 });
 
+document.querySelector('body').addEventListener('click', function(event){
+  let activeMenu = document.querySelector('.menu_active');
+  if(window.innerWidth < 768 && activeMenu) {
+    if(!event.target == activeMenu || !activeMenu.contains(event.target)){
+      burgerButtonWrap.classList.remove('menu_active');
+    }
+  }
+});
+
 // }
